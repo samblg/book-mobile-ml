@@ -1,0 +1,35 @@
+name: "VGG_VOC0712Plus_SSD_512x512_deploy"
+input: "data"
+input_shape {
+dim: 1
+dim: 256
+dim: 512
+dim: 512
+}
+layer {
+  name: "conv1_1_mid"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1_1_mid"
+  param {
+    lr_mult: 0.0
+    decay_mult: 0.0
+  }
+  convolution_param {
+    num_output: 9
+    bias_term: false
+    pad_h: 1
+    pad_w: 0
+    kernel_h: 3
+    kernel_w: 1
+    stride_h: 1
+    stride_w: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+

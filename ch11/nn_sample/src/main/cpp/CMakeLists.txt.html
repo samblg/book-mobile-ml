@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>D:\Data\lu\移动深度学习实战\第12章\code\nn_sample\src\main\cpp\CMakeLists.txt.html</title>
+<meta name="Generator" content="Vim/8.1">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="cmake">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="desert">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #333333; }
+body { font-family: monospace; color: #ffffff; background-color: #333333; }
+* { font-size: 1em; }
+.LineNr { color: #ffff00; }
+.ModeMsg { color: #daa520; font-weight: bold; }
+.Identifier { color: #98fb98; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="Identifier">cmake_minimum_required</span>(<span class="ModeMsg">VERSION</span> 3.4.1)
+<span id="L2" class="LineNr"> 2 </span>
+<span id="L3" class="LineNr"> 3 </span><span class="Identifier">add_library</span>(nn_sample
+<span id="L4" class="LineNr"> 4 </span>            <span class="ModeMsg">SHARED</span>
+<span id="L5" class="LineNr"> 5 </span>            nn_sample.cpp
+<span id="L6" class="LineNr"> 6 </span>            simple_model.cpp)
+<span id="L7" class="LineNr"> 7 </span>
+<span id="L8" class="LineNr"> 8 </span><span class="Identifier">target_link_libraries</span>(nn_sample
+<span id="L9" class="LineNr"> 9 </span>            neuralnetworks
+<span id="L10" class="LineNr">10 </span>            android
+<span id="L11" class="LineNr">11 </span>            log)
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

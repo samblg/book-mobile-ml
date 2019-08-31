@@ -1,0 +1,82 @@
+layer {
+  name: "cifar"
+  type: "Data"
+  top: "data"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  transform_param {
+    #scale:0.004
+    mean_file: "/media/hdd/lbl_trainData/git/caffe_DoReFa/examples/cifar10/cifar10/mean.binaryproto"
+  }
+  data_param {
+    source: "/media/hdd/lbl_trainData/git/caffe_DoReFa/examples/cifar10/cifar10/cifar10_train_lmdb"
+    batch_size: 1
+    backend: LMDB
+  }
+}
+layer {
+  name: "cifar"
+  type: "Data"
+  top: "data"
+  top: "label"
+  include {
+    phase: TEST
+  }
+  transform_param {
+  #scale:0.004
+    mean_file: "/media/hdd/lbl_trainData/git/caffe_DoReFa/examples/cifar10/cifar10/mean.binaryproto"
+  }
+  data_param {
+    source: "/media/hdd/lbl_trainData/git/caffe_DoReFa/examples/cifar10/cifar10/cifar10_test_lmdb"
+    batch_size: 1
+    backend: LMDB
+  }
+}
+layer {
+  name: "convDorefa2"
+  type: "ConvDorefa"
+  bottom: "data"
+  top: "convDorefa2"
+  param {
+    lr_mult: 1
+  }
+  convolution_param {
+    bias_term:false
+    num_output: 10
+    pad: 0
+    kernel_size: 32
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+  convolution_dorefa_param {
+    contain_active: false
+    w_bits:4
+    a_bits:1
+    g_bits:1
+  }
+}
+
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "convDorefa2"
+  bottom: "label"
+  top: "accuracy"
+  include {
+    phase: TEST
+  }
+}
+layer {
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "convDorefa2"
+  bottom: "label"
+  top: "loss"
+}
