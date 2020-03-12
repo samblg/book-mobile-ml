@@ -1,0 +1,15 @@
+Weather	Temperature	Humidity	Windy	Class
+Rain	Hot	High	Weak	No
+Rain	Hot	High	Strong	No
+Overcast	Hot	High	Weak	Yes
+Sunny	Mild	High	Weak	Yes
+Sunny	Cool	Normal	Weak	Yes
+Sunny	Cool	Normal	Strong	No
+Overcast	Cool	Normal	Strong	Yes
+Rain	Mild	High	Weak	No
+Rain	Cool	Normal	Weak	Yes
+Sunny	Mild	Normal	Weak	Yes
+Rain	Mild	Normal	Strong	Yes
+Overcast	Mild	High	Strong	Yes
+Overcast	Hot	Normal	Weak	Yes
+Sunny	Mild	High	Strong	No
