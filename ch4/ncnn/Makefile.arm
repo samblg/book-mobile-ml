@@ -1,0 +1,2 @@
+INCLUDE_DIR += -I/usr/include/arm-linux-gnueabihf -I/usr/include/arm-linux-gnueabihf/c++/4.8 -I"include/layer/arm"
+CFLAGS 	+= -march=armv8-a

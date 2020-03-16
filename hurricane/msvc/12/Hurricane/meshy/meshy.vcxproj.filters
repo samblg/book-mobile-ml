@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\iocp">
+      <UniqueIdentifier>{8c9d31ed-d25e-4496-b435-1cbb94b209bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\http">
+      <UniqueIdentifier>{26bad489-bbff-42d9-bc17-802d4652426d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\win32">
+      <UniqueIdentifier>{fbfe2c27-b9c4-4f74-983d-b537150fe95e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\utils">
+      <UniqueIdentifier>{c0c9055e-608f-4ac0-a430-eb4e83aff275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\iocp">
+      <UniqueIdentifier>{5072466f-f013-4984-a3b9-86edc718fdb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\rest">
+      <UniqueIdentifier>{41524c9b-ffe6-4010-ad74-2e157601cd97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\template">
+      <UniqueIdentifier>{db81daa6-6ed3-4d38-84f2-57cc038ff53f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\utils">
+      <UniqueIdentifier>{2cf71ca3-092e-4f2a-8ec1-bab9c560c78f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\win32">
+      <UniqueIdentifier>{31b963c7-b726-46a3-ba90-1e94aad9c6de}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\iocp\IOCPConnection.cpp">
+      <Filter>源文件\iocp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\iocp\IOCPLoop.cpp">
+      <Filter>源文件\iocp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\iocp\IOCPServer.cpp">
+      <Filter>源文件\iocp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\iocp\IOCPStream.cpp">
+      <Filter>源文件\iocp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\http\HttpConnection.cpp">
+      <Filter>源文件\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\http\HttpContext.cpp">
+      <Filter>源文件\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\http\HttpRequest.cpp">
+      <Filter>源文件\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\http\HttpResponse.cpp">
+      <Filter>源文件\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\http\HttpServer.cpp">
+      <Filter>源文件\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\win32\NetWin32.cpp">
+      <Filter>源文件\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\utils\CommonUtils.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\utils\ThreadPool.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\EventQueueLoop.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\Net.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\PackageDataSink.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\deps\meshy\src\utils\String.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\ByteArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\DataSink.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\EventQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\EventQueueLoop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\IoLoop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\Loop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\Meshy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\Net.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\PackageDataSink.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\win32\NetWin32.h">
+      <Filter>头文件\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\iocp\IOCPClient.h">
+      <Filter>头文件\iocp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\iocp\IOCPConnection.h">
+      <Filter>头文件\iocp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\iocp\IOCPLoop.h">
+      <Filter>头文件\iocp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\iocp\IOCPServer.h">
+      <Filter>头文件\iocp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\iocp\IOCPStream.h">
+      <Filter>头文件\iocp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\utils\CommonUtils.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\utils\ConcurrentQueue.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\utils\Exendian.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\utils\String.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\utils\ThreadPool.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\utils\Time.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\rest\HttpClient.h">
+      <Filter>头文件\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\rest\HttpConnection.h">
+      <Filter>头文件\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\rest\HttpContext.h">
+      <Filter>头文件\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\rest\HttpDataSink.h">
+      <Filter>头文件\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\rest\HttpRequest.h">
+      <Filter>头文件\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\rest\HttpResponse.h">
+      <Filter>头文件\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\rest\HttpServer.h">
+      <Filter>头文件\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\deps\meshy\include\Export.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\deps\meshy\include\template\utils\thread_pool.tcc">
+      <Filter>头文件\template</Filter>
+    </None>
+  </ItemGroup>
+</Project>

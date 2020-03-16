@@ -123,3 +123,20 @@ class MobileNetV2(nn.Module):
                 n = m.weight.size(1)
                 m.weight.data.normal_(0, 0.01)
                 m.bias.data.zero_()
+
+def main(pretrained=True):
+    model = MobileNetV2(width_mult=1)
+
+    if pretrained:
+        try:
+            from torch.hub import load_state_dict_from_url
+        except ImportError:
+            from torch.utils.model_zoo import load_url as load_state_dict_from_url
+        state_dict = load_state_dict_from_url(
+            'mobilenetv2_1.0-f2a8633.pth.tar', progress=True)
+        model.load_state_dict(state_dict)
+    return model
+
+
+if __name__ == '__main__':
+    net = main(True)

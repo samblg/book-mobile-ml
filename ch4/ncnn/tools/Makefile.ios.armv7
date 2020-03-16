@@ -1,0 +1,15 @@
+BIN    := build/armv7/libncnn.a
+INCLUDE_DIR := -I./include -I./include/layer -I"../deps/resunpack/include" -I"./include/layer/arm" -I"./include/layer/x86"
+CXX_SRC_DIR := src
+TARGET_DIR := build/armv7/targets
+OBJ_DIR := build/armv7/objs
+
+CC		:= "/Applications/Xcode 8.2(B).app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+CXX		:= "/Applications/Xcode 8.2(B).app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+SDK_SYS_ROOT := /Applications/Xcode 8.2(B).app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk
+CFLAGS 	:= -DIOS -x c++ -std=c++11 -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fmodules -gmodules -fmodules-cache-path=/Users/authen/Library/Developer/Xcode/DerivedData/ModuleCache -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/Users/authen/Library/Developer/Xcode/DerivedData/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Wno-trigraphs -fpascal-strings -O0 -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wdocumentation -Wunreachable-code -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -DDEBUG=1 -isysroot "${SDK_SYS_ROOT}"  -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=10.2 -g -fvisibility-inlines-hidden -Wno-sign-conversion -Winfinite-recursion -Wmove -fembed-bitcode-marker $(INCLUDE_DIR)
+
+CFLAGS 	+= $(INCLUDE_DIR) -Wall -O3 -fPIC
+CXXFLAGS 	:=  -std=c++11
+
+include ../deps/builder/Makefile.static-library

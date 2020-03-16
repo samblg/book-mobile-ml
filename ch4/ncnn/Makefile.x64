@@ -1,0 +1,2 @@
+INCLUDE_DIR +=-Iinclude/layer/x86
+CFLAGS 	+= $(INCLUDE_DIR)
