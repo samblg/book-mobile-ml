@@ -1,0 +1,7 @@
+CURRENT_FILE_PATH := $(lastword $(MAKEFILE_LIST))
+CURRENT_FILE_DIR := $(dir $(CURRENT_FILE_PATH))
+include $(CURRENT_FILE_DIR)/Makefile.common
+
+$(BIN): $(OBJS) Makefile
+	ar crv $(LDFLAGS) $(BIN) $(OBJS)
+

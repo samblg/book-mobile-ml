@@ -1,0 +1,68 @@
+ARCH=$(shell uname -m)
+
+ifeq ($(ARCH), x86_64)
+	-include Makefile.x64
+else
+	-include Makefile.arm
+endif
+
+ifndef C_SRC_DIR
+    C_SRC_DIR := $(SRC_DIR)
+endif
+ifndef C_SRC_FILES
+    C_SRC_FILES := $(shell find $(C_SRC_DIR) -name '*.c')
+endif
+C_TARGET_FILES := $(foreach src,$(C_SRC_FILES),$(subst $(C_SRC_DIR)/,$(TARGET_DIR)/,$(src)).target.mk)
+C_OBJS := $(foreach src,$(C_SRC_FILES),$(subst $(C_SRC_DIR)/,$(OBJ_DIR)/,$(src)).o)
+TARGET_FILES += $(C_TARGET_FILES)
+OBJS += $(C_OBJS)
+
+ifndef CXX_SRC_DIR
+    CXX_SRC_DIR := $(SRC_DIR)
+endif
+ifndef CXX_SRC_FILES
+CXX_SRC_FILES := $(shell find $(CXX_SRC_DIR) -name '*.cpp' -or -name '*.cxx' -or -name '*.cc')
+endif
+CXX_TARGET_FILES := $(foreach src,$(CXX_SRC_FILES),$(subst $(CXX_SRC_DIR)/,$(TARGET_DIR)/,$(src)).target.mk)
+CXX_OBJS := $(foreach src,$(CXX_SRC_FILES),$(subst $(CXX_SRC_DIR)/,$(OBJ_DIR)/,$(src)).o)
+TARGET_FILES += $(CXX_TARGET_FILES)
+OBJS += $(CXX_OBJS)
+
+.PHONY: all build_bin gen_targets clean distclean
+
+all: build_target
+
+build_target: gen_targets $(BIN)
+
+gen_targets: $(TARGET_FILES)
+
+$(CXX_TARGET_FILES):$(TARGET_DIR)/%.target.mk:$(CXX_SRC_DIR)/% Makefile
+	@mkdir -pv $(dir $@)
+	@rm -f $@
+	@echo Resolve dependencies of $<
+	$(CXX) -MM $(CFLAGS) $(CXXFLAGS) $< > $@
+	@echo -e '\t@mkdir -pv $$(dir $$@)' >> $@
+	@echo -e '\t$$(CXX) -c $$(CFLAGS) $$(CXXFLAGS) -o $$@ $$<\n' >> $@
+	@sed -i -e 's/^.*\.o[ :]*/$(subst /,\/,$(subst $(CXX_SRC_DIR)/,$(OBJ_DIR)/,$<)).o :/g' $@
+	@sed -i -e 's/^-e //g' $@
+
+$(C_TARGET_FILES):$(TARGET_DIR)/%.target.mk:$(C_SRC_DIR)/% Makefile
+	@mkdir -pv $(dir $@)
+	@rm -f $@
+	@echo Resolve dependencies of $<
+	$(CC) -MM $(CFLAGS) $< > $@
+	@echo -e '\t@mkdir -pv $$(dir $$@)' >> $@
+	@echo -e '\t$$(CC) -c $$(CFLAGS) -o $$@ $$<\n' >> $@
+	@sed -i -e 's/^.*\.o[ :]*/$(subst /,\/,$(subst $(C_SRC_DIR)/,$(OBJ_DIR)/,$<)).o :/g' $@
+	@sed -i -e 's/^-e //g' $@
+
+-include $(TARGET_FILES)
+
+clean:
+	rm -f $(TARGET_FILES)
+	rm -f $(OBJS)
+
+distclean:
+	rm -f $(TARGET_FILES)
+	rm -f $(OBJS) $(BIN)
+

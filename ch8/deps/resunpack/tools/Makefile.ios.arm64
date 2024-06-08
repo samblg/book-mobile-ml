@@ -1,0 +1,17 @@
+BIN    := build/arm64/libresunpack.a
+INCLUDE_DIR := -Iinclude
+CXX_SRC_DIR := src
+TARGET_DIR := build/arm64/targets
+OBJ_DIR := build/arm64/objs
+
+CC     	:= gcc
+CXX		:= g++
+
+#CFLAGS 	:= -Wall -O3 -fPIC $(INCLUDE_DIR)
+#CXXFLAGS 	:=  -std=c++11
+
+CC		:= "/Applications/Xcode 8.2(B).app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+SDK_SYS_ROOT := /Applications/Xcode 8.2(B).app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk
+CFLAGS 	:= -x c++ -std=c++11 -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fmodules -gmodules -fmodules-cache-path=/Users/authen/Library/Developer/Xcode/DerivedData/ModuleCache -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/Users/authen/Library/Developer/Xcode/DerivedData/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Wno-trigraphs -fpascal-strings -O0 -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wdocumentation -Wunreachable-code -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -DDEBUG=1 -isysroot "${SDK_SYS_ROOT}"  -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=10.2 -g -fvisibility-inlines-hidden -Wno-sign-conversion -Winfinite-recursion -Wmove -fembed-bitcode-marker $(INCLUDE_DIR)
+
+include ../builder/Makefile.static-library
